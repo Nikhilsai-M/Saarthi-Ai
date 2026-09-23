@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+env/
+
+# Build output
+dist/
+build/
+.next/
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Logs and local runtime files
+*.log
+uploads/
+
+# Nested source-repo metadata preserved locally while this monorepo is pushed
+.nested-git-backups/
