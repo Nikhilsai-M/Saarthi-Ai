@@ -1,0 +1,352 @@
+/* Admin Agent Manage Page */
+
+.admin-agent-page {
+    padding: 2rem;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.admin-agent-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+}
+
+.admin-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.875rem;
+    border-radius: var(--radius);
+    border: 1.5px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    font-family: inherit;
+    transition: all 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.admin-back-btn:hover {
+    background: var(--gray-100);
+    color: var(--foreground);
+}
+
+.admin-agent-header-info h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin: 0;
+}
+
+.admin-agent-header-info p {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin: 2px 0 0;
+}
+
+/* Body */
+
+.admin-agent-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Panels */
+
+.admin-panel {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.admin-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.admin-panel-header h2 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0;
+}
+
+.admin-doc-count {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    padding: 0.125rem 0.625rem;
+}
+
+/* Loading / Error / Empty */
+
+.admin-loading {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.admin-error {
+    background: var(--error-light);
+    border: 1px solid var(--error);
+    border-radius: var(--radius);
+    padding: 0.625rem 0.875rem;
+    color: var(--error-dark);
+    font-size: 0.875rem;
+}
+
+.admin-empty {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+/* Documents Table */
+
+.admin-docs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.admin-docs-table th {
+    text-align: left;
+    padding: 0.375rem 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+}
+
+.admin-docs-table td {
+    padding: 0.75rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+    vertical-align: middle;
+}
+
+.admin-docs-table tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-docs-table tr:hover td {
+    background: var(--surface-2);
+}
+
+.admin-doc-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    color: var(--foreground) !important;
+}
+
+.admin-delete-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    transition: all 0.15s;
+    font-family: inherit;
+}
+
+.admin-delete-btn:hover:not(:disabled) {
+    background: var(--error-light);
+    color: var(--error-dark);
+}
+
+.admin-delete-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Drop Zone */
+
+.admin-dropzone {
+    border: 1.5px dashed var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    background: var(--surface-2);
+    margin-bottom: 1rem;
+}
+
+.admin-dropzone:hover,
+.admin-dropzone.drag-over {
+    border-color: var(--accent);
+    background: var(--accent-50);
+    color: var(--accent);
+}
+
+.admin-dropzone-title {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.admin-dropzone.drag-over .admin-dropzone-title {
+    color: var(--accent);
+}
+
+.admin-dropzone-sub {
+    font-size: 0.8125rem;
+    color: var(--text-muted) !important;
+    margin: 0 !important;
+}
+
+/* Upload Message */
+
+.admin-upload-msg {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 0.875rem;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.admin-upload-msg.success {
+    background: var(--success-50);
+    color: var(--success-dark);
+    border: 1px solid var(--success);
+}
+
+.admin-upload-msg.error {
+    background: var(--error-light);
+    color: var(--error-dark);
+    border: 1px solid var(--error);
+}
+
+/* Upload Actions */
+
+.admin-upload-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.admin-upload-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+}
+
+/* Status Pill */
+
+.admin-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.2rem 0.625rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.admin-status-pill.ok {
+    background: var(--success-50);
+    color: var(--success-dark);
+}
+
+.admin-status-pill.warn {
+    background: var(--warning-light);
+    color: var(--warning-dark);
+}
+
+.admin-status-pill.running {
+    background: var(--info-light);
+    color: var(--info);
+}
+
+/* Indexing Log */
+
+.admin-index-log {
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    max-height: 220px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.admin-log-line {
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.admin-log-line.success {
+    color: var(--success-dark);
+    font-weight: 600;
+}
+
+.admin-log-line.error {
+    color: var(--error-dark);
+    font-weight: 600;
+}
+
+/* Index Stats */
+
+.admin-index-stats {
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+}
+
+.admin-index-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.admin-index-stat-val {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--foreground);
+    font-variant-numeric: tabular-nums;
+}
+
+.admin-index-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Spin animation */
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.spin { animation: spin 0.8s linear infinite; }

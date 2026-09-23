@@ -1,0 +1,331 @@
+.notes-page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.notes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.notes-header h1 {
+    font-size: 1.75rem;
+}
+
+.notes-header p {
+    color: var(--gray-500);
+    margin-top: 0.25rem;
+}
+
+.notes-header-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.notes-search {
+    margin-bottom: 1.5rem;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.notes-list-view {
+    grid-template-columns: 1fr;
+}
+
+.note-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.note-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--gray-300);
+    transform: translateY(-2px);
+}
+
+.note-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-card-icon {
+    color: var(--primary);
+}
+
+.note-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.note-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--gray-500);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+}
+
+.note-action-btn:hover {
+    background: var(--gray-100);
+    color: var(--gray-700);
+}
+
+.note-action-delete:hover {
+    background: var(--error-light, #fef2f2);
+    color: var(--error);
+}
+
+.note-card-body {
+    flex: 1;
+    min-height: 0;
+    cursor: pointer;
+}
+
+.note-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.note-card-course {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+}
+
+.note-card-preview {
+    font-size: 0.8125rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.note-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: 0.25rem;
+}
+
+.note-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.125rem 0.5rem;
+    background: var(--gray-100);
+    color: var(--gray-600);
+    border-radius: var(--radius-full);
+    font-size: 0.6875rem;
+    font-weight: 500;
+}
+
+.note-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+}
+
+.note-card-footer span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.6875rem;
+    color: var(--gray-500);
+}
+
+@media (max-width: 1024px) {
+    .notes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .notes-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+}
+
+.notes-error {
+    padding: 0.75rem 1rem;
+    background: var(--error-light);
+    color: var(--error-dark);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    border-radius: var(--radius-md);
+    margin-bottom: 1rem;
+}
+
+.notes-loading {
+    padding: 1rem;
+    color: var(--gray-500);
+}
+
+.notes-empty {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--gray-200);
+}
+
+.notes-empty-icon {
+    color: var(--gray-300);
+    margin-bottom: 1rem;
+}
+
+.notes-empty h3 {
+    font-size: 1.25rem;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+}
+
+.notes-empty p {
+    color: var(--gray-500);
+    margin-bottom: 1.5rem;
+}
+
+/* Note create/edit modal */
+.notes-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 1000;
+    padding: 5vh 1rem 2rem;
+}
+
+.notes-modal {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    width: 100%;
+    max-width: 520px;
+    max-height: calc(100vh - 10vh);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.notes-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.notes-modal-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+.notes-modal-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--gray-500);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+}
+
+.notes-modal-close:hover {
+    background: var(--gray-100);
+    color: var(--gray-700);
+}
+
+.notes-modal-body {
+    padding: 1.5rem;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.notes-modal-field label {
+    display: block;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var(--gray-700);
+    margin-bottom: 0.35rem;
+}
+
+.notes-modal-field .input {
+    width: 100%;
+}
+
+.notes-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border);
+    background: var(--gray-50);
+}
+
+[data-theme='dark'] .notes-modal-header h2 {
+    color: var(--foreground);
+}
+
+[data-theme='dark'] .notes-modal-field label {
+    color: var(--gray-700);
+}
+
+[data-theme='dark'] .notes-empty {
+    border-color: var(--border);
+}
+
+[data-theme='dark'] .notes-empty h3 {
+    color: var(--gray-600);
+}
+
+[data-theme='dark'] .notes-empty p {
+    color: var(--gray-500);
+}

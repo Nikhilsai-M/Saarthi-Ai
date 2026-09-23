@@ -1,0 +1,62 @@
+@keyframes skeletonShimmer {
+    0% { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+}
+
+.skeleton-pulse {
+    background: linear-gradient(
+        90deg,
+        var(--surface-3) 25%,
+        var(--surface-2) 50%,
+        var(--surface-3) 75%
+    );
+    background-size: 800px 100%;
+    animation: skeletonShimmer 1.4s ease-in-out infinite;
+    display: block;
+    flex-shrink: 0;
+}
+
+[data-theme='dark'] .skeleton-pulse {
+    background: linear-gradient(
+        90deg,
+        var(--surface-3) 25%,
+        rgba(255,255,255,0.04) 50%,
+        var(--surface-3) 75%
+    );
+    background-size: 800px 100%;
+    animation: skeletonShimmer 1.4s ease-in-out infinite;
+}
+
+.skeleton-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+}
+
+.skeleton-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+}
+
+.skeleton-course-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.skeleton-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}

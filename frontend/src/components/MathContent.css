@@ -1,0 +1,100 @@
+.math-content {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--foreground);
+    word-break: break-word;
+}
+
+.math-code-block {
+    background: #1e2330;
+    color: #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 0.875rem 1rem;
+    margin: 0.625rem 0;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.82rem;
+    position: relative;
+}
+
+.math-code-lang {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.6rem;
+    font-size: 0.7rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: sans-serif;
+}
+
+/* KaTeX display math */
+.math-content .katex-display {
+    margin: 0.75rem 0;
+    overflow-x: auto;
+}
+
+/* Headings rendered by renderMath */
+.math-content .ai-h1,
+.math-content .ai-h2,
+.math-content .ai-h3,
+.math-content .ai-h4 {
+    font-weight: 600;
+    color: var(--foreground);
+    margin: 0.75rem 0 0.25rem;
+}
+
+.math-content .ai-h1 { font-size: 1.05rem; }
+.math-content .ai-h2 { font-size: 0.975rem; }
+.math-content .ai-h3 { font-size: 0.9rem; }
+.math-content .ai-h4 { font-size: 0.85rem; }
+
+.math-content ul,
+.math-content ol {
+    padding-left: 1.4rem;
+    margin: 0.35rem 0;
+}
+
+.math-content li {
+    margin: 0.15rem 0;
+}
+
+/* Tables */
+.math-content .ai-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+}
+
+.math-content .ai-table th,
+.math-content .ai-table td {
+    border: 1px solid var(--border, #e5e7eb);
+    padding: 0.4rem 0.75rem;
+    text-align: left;
+}
+
+.math-content .ai-table th {
+    background: var(--surface-2, #f3f4f6);
+    font-weight: 600;
+}
+
+.math-content .ai-table tr:nth-child(even) td {
+    background: var(--surface-1, #fafafa);
+}
+
+/* Streaming cursor */
+.chat-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: var(--primary);
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    animation: blink 0.9s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
